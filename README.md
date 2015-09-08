@@ -1,2 +1,3 @@
-# mean-example
-An example template for a MEAN application.
+README
+
+Class Hub for General Assembly
