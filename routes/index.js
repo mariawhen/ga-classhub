@@ -4,7 +4,7 @@ var router  = express.Router();
 var jwt     = require('jsonwebtoken');
 var User    = require('../models/User');
 
-var supersecret = 'somethingfunnyfunniestfunnier123';
+var superSecret = 'somethingfunnyfunniestfunnier123';
 
 // import controllers for resources
 var resourcesController = require('../controllers/resources');
@@ -18,11 +18,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/api', function(req, res, next) {
-  res.json({message: "You made it to the API"});
-});
+// router.get('/api', function(req, res, next) {
+//   res.json({message: "You made it to the API"});
+// });
 
-// Auth Routes
+// AUTHENTICATION Routes
 router.post('/api/authenticate', function(req, res){
   User.findOne({
     username: req.body.username
@@ -59,8 +59,41 @@ router.post('/api/authenticate', function(req, res){
       }
     }
 
-  })
-})
+  });
+});
+
+// Route MIDDLEWARE to verify a token
+router.use(function(req, res, next){
+
+  var token = req.body.token || req.param('token') || req.headers['x-access-token'];
+
+  if (token) {
+
+    jwt.verify(token, superSecret, function(err, decoded) {
+      if (err) {
+        return res.status(403).send({
+          success: false,
+          message: 'Failed to authenticate token.'
+        });
+      } else {
+        req.decoded = decoded;
+
+        next();
+      }
+    });
+
+  } else {
+    return res.status(403).send({
+      success: false,
+      message: 'No token provided.'
+    });
+  }
+});
+
+// GET ME
+router.get('/me', function(req, res) {
+  res.send(req.decoded)
+});
 
 
 // CREATE A NEW USER:
