@@ -47,7 +47,7 @@ router.post('/api/authenticate', function(req, res){
           name: user.name,
           username: user.username,
           id: user._id
-        }, supersecret, {
+        }, superSecret, {
           expiresInMinutes: 1440
         });
 
@@ -96,7 +96,7 @@ router.get('/me', function(req, res) {
 });
 
 
-// CREATE A NEW USER:
+// CREATE A NEW USER
 router.post('/api/users', function(req, res, next) {
  var user = new User();
 

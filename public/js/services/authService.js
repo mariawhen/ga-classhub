@@ -7,7 +7,7 @@
     .factory('Auth', function($http, $q, AuthToken) {
       var authFactory = {};
         authFactory.login = function(username, password) {
-          return $http/post('api/authenticate', {
+          return $http.post('api/authenticate', {
             username: username,
             password: password
           })
@@ -31,7 +31,7 @@
 
         authFactory.getUser = function() {
           if(AuthToken.getToken())
-            return $http.get('/api/me');
+            return $http.get('/api/me', { cache: true });
           else
             return $q.reject({message: 'User has no token.'});
         };
@@ -39,7 +39,7 @@
       return authFactory;
     })
 
-    .factory('AuthToken', function($http, $q, AuthToken) {
+    .factory('AuthToken', function($window) {
       var authTokenFactory = {};
         authTokenFactory.getToken = function() {
           return $window.localStorage.getItem('token');
@@ -55,7 +55,7 @@
       return authTokenFactory;
     })
 
-    .factory('AuthInterceptor', function($http, $q, AuthToken) {
+    .factory('AuthInterceptor', function($q, $location, AuthToken) {
       var interceptorFactory = {};
         interceptorFactory.request = function(config) {
 
