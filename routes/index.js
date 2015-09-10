@@ -62,6 +62,26 @@ router.post('/api/authenticate', function(req, res){
   });
 });
 
+// CREATE A NEW USER
+router.post('/api/users', function(req, res, next) {
+ var user = new User();
+
+ console.log(req.body);
+
+ user.name = req.body.name;
+ user.username = req.body.username;
+ user.password = req.body.password;
+
+ user.save(function(err){
+   if (err) {
+     if (err.code == 11000) return res.json({success: false, message: 'A user with that user name already exists...'});
+     else return res.send(err);
+   }
+
+   res.json({message: 'A user was created!'});
+ });
+});
+
 // Route MIDDLEWARE to verify a token
 router.use(function(req, res, next){
 
@@ -96,25 +116,6 @@ router.get('/me', function(req, res) {
 });
 
 
-// CREATE A NEW USER
-router.post('/api/users', function(req, res, next) {
- var user = new User();
-
- console.log(req.body);
-
- user.name = req.body.name;
- user.username = req.body.username;
- user.password = req.body.password;
-
- user.save(function(err){
-   if (err) {
-     if (err.code == 11000) return res.json({success: false, message: 'A user with that user name already exists...'});
-     else return res.send(err);
-   }
-
-   res.json({message: 'A user was created!'});
- });
-});
 
 
 // GET ALL USERS FROM DATABASE:

@@ -9,8 +9,6 @@
 
     var vm = this;
 
-    vm.message = "Hi";
-
     vm.login = {};
     vm.login.status = Auth.isLoggedIn();
 
@@ -24,6 +22,20 @@
           vm.user = data;
         });
     });
+
+    vm.saveUser = function() {
+      vm.processing = true;
+      vm.message    = '';
+      console.log(vm.userData);
+
+      User.create(vm.userData)
+        .success(function(data) {
+          vm.processing = false;
+          vm.userData = {};
+
+          vm.message = data.message;
+        });
+    }
 
     //function to handle login form
     vm.doLogin = function() {

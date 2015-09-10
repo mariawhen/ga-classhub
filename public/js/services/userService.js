@@ -16,7 +16,7 @@
         return $http.get('/api/users');
       };
 
-      userFactory.create = function() {
+      userFactory.create = function(userData) {
         return $http.post('/api/users', userData);
       };
 
