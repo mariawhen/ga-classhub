@@ -13,26 +13,26 @@ Users should be able to create a profile, and login. Once authenticated, the sid
 
 ##MVP User Stories
 As A user, I would like to be able to ...
-[x] Login and Logout
-[] Create a User profiles
-[] Go to a User profile
-[] Add Notes
-[] See All Notes
-[] Filter Notes by Subject Type
-[] Add Links to a Note, also by Type
-[] Add Imgages to a Notes, also by Type
-[] Add/Link my Facebook profile
-[] Add/Link my Twitter Profile
-[] Add/Link my Twitter Profile
+- [x] Login and Logout
+- [ ] Create a User profiles
+- [ ] Go to a User profile
+- [ ] Add Notes
+- [ ] See All Notes
+- [ ] Filter Notes by Subject Type
+- [ ] Add Links to a Note, also by Type
+- [ ] Add Imgages to a Notes, also by Type
+- [ ] Add/Link my Facebook profile
+- [ ] Add/Link my Twitter Profile
+- [ ] Add/Link my Twitter Profile
 
 ##ICEBOX User Stories
 As A user, I would like to be able to ...
-[] Login through my Github account
-[] Have a Calendar
-[] Add an Event to the Calendar
-[] Be able to Edit/Delete and Event
-[] Show if I am going to an Event or not
-[] See other Users who are going to the Event
-[] An announcement board
-[] To comment on an announcement
+- [ ] Login through my Github account
+- [ ] Have a Calendar
+- [ ] Add an Event to the Calendar
+- [ ] Be able to Edit/Delete and Event
+- [ ] Show if I am going to an Event or not
+- [ ] See other Users who are going to the Event
+- [ ] An announcement board
+- [ ] To comment on an announcement
 
