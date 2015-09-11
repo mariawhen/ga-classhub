@@ -9,10 +9,19 @@ angular.module('gaClasshub')
 
   $stateProvider
 
+    // HOME STATE
     .state('home', {
       url: '/',
       templateUrl:  'js/templates/home.html',
       controller:   'mainController',
+      controllerAs: 'main'
+    })
+
+    // GALLERY STATE
+    .state('gallery', {
+      url: '/gallery',
+      templateUrl: 'js/templates/gallery.html',
+      controller: 'mainController',
       controllerAs: 'main'
     });
 

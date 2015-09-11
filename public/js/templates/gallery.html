@@ -1,0 +1,91 @@
+<div class="container">
+<h1>DTLA WDI_04</h1>
+
+
+    <!-- thumb navigation carousel -->
+<!--     <div class="col-md-12 hidden-sm hidden-xs" id="slider-thumbs">
+          <ul class="list-inline">
+          <li> <a id="carousel-selector-0" class="selected">
+            <img src="../../img/IMG_4582.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-1">
+            <img src="../../img/IMG_4722.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-2">
+            <img src="../../img/IMG_4730.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-3">
+            <img src="../../img/IMG_4755.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-4">
+            <img src="../../img/IMG_4766.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-5">
+            <img src="../../img/IMG_4769.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-6">
+            <img src="../../img/IMG_4773.JPG" class="img-responsive">
+          </a></li>
+          <li> <a id="carousel-selector-7">
+            <img src="../../img/IMG_4793.JPG" class="img-responsive">
+          </a></li>
+            </ul>
+
+    </div> -->
+
+
+    <!-- main slider carousel -->
+    <h1>test</h1>
+    {{main.carouselImages}}
+    {{(main.carouselImages).indexOf(image)}}
+    <div class="row">
+        <div class="col-md-12" id="slider">
+
+                <div class="col-md-12" id="carousel-bounding-box">
+                    <div id="myCarousel" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="active item" data-slide-number="0">
+                                <img src="{{http://placehold.it/1200x480&amp;text=one}}" class="img-responsive">
+                                {{(main.carouselImages).indexOf(image)}}
+                            </div>
+                            <div class="item" data-slide-number="{{(main.carouselImages).indexOf(image)}}" ng-repeat="image in main.carouselImages">
+                              <img src="{{image.source}}" class="img-responsive">
+                            </div>
+
+                        </div>
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+    <!--/main slider carousel-->
+
+<!--     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active" ng-repeat="image in main.carouselImages">
+          <img class="first-slide" src="{{image.imgSource}}" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div> -->
+
+</div>

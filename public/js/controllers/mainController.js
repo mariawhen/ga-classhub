@@ -40,7 +40,7 @@
     //function to handle login form
     vm.doLogin = function() {
       //call the Auth.login()
-      vm.login.status = Auth.isLoggedIn();
+      // vm.login.status = Auth.isLoggedIn();
 
       console.log('doLogin triggered');
       Auth.login(vm.loginData.username, vm.loginData.password)
@@ -48,6 +48,8 @@
           vm.login.status = Auth.isLoggedIn();
           //if a user successfully logs in, redirect to users page
           $location.path('/users');
+        }, function(err) {
+          console.log(err);
         });
 
     };
@@ -61,7 +63,35 @@
       $location.path('/login');
     };
 
+    vm.carouselImages = [
+      {
+        imgSource: "../../img/IMG_4582.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4722.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4730.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4755.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4766.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4769.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4773.JPG"
+      },
+      {
+        imgSource: "../../img/IMG_4793.JPG"
+      }
+    ]
+
   }
+
 
 
 })();

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en" class="no-js" ng-app="gaClasshub">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- bootstrap stylesheet link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- jQuery CDN with local fallback -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script> -->
+  <!-- jQuery plugin support script -->
+  <script src="js/plugins.js"></script>
+  <!-- Angular CDN with local fallback -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+  <script>
+  window.angular || document.write('<script src="js/vendor/angular-1.4.4.min.js"><\/script>')
+  </script>
+  <!-- Angular JS UI Router JS File: -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <!-- Angular JS User Service JS File: -->
+  <script src="js/services/userService.js"></script>
+  <!-- Angular JS Auth Service JS File: -->
+  <script src="js/services/authService.js"></script>
+  <!-- Async-sourced local JS modules -->
+  <script src="js/app.js"></script>
+  <!-- Our UI Router Custom Route File: -->
+  <script src="js/app.routes.js"></script>
+  <!-- Angular JS Main Controller JS File: -->
+  <script src="js/controllers/mainController.js"></script>
+</head>
+
+<body>
+  <!--          BODY START           -->
+  <!--           TOP NAV START           -->
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- <div class="logo"> -->
+        <a href="#menu-toggle" id="menu-toggle" ng-hide="!main.login.status">
+          <img src="/img/GAlogo.png" alt="GA logo" width="5%">GA Class Hub
+        </a>
+      <!-- </div> -->
+     <!--  <div class="logo">
+        <a href="#"  ng-hide="!main.login.status">
+          <img src="/img/GAlogo.png" alt="GA logo" width="5%">GA Class Hub
+        </a>
+      </div> -->
+
+    </div> <!-- navbar-header -->
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <!--     <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form> -->
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In <b class="caret"></b>&nbsp;&nbsp;</a>
+          <ul class="dropdown-menu">
+            <li>
+
+              <form class='login' ng-submit="main.doLogin()">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Username" ng-model="main.loginData.username" aria-describedby="sizing-addon3">
+                </div>
+
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Password" ng-model="main.loginData.password" aria-describedby="basic-addon2">
+                </div>
+
+                <button type="submit" class="btn btn-default">Submit</button>
+
+              </form>
+
+            </li>
+
+            <li>
+              <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Sign Up</button>
+            </li>
+
+            <li>
+              <button class="btn btn-default"><a ng-click="main.doLogout()">Logout</a></button>
+            </li>
+
+          </ul>
+        </li>
+        <!--dropdown -->
+      </ul>
+      <!-- .navbar-right -->
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+  <!--          TOP NAV END           -->
+  <!--          WRAPPER START              -->
+  <div id="wrapper">
+
+
+
+    <!--          MODAL START           -->
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Sign Up With GA Class Hub</h4>
+        </div>
+        <div class="modal-body">
+          <p>
+            <form ng-submit="main.saveUser()">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1" ng-model="main.userData.name">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="main.userData.username">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon2"><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon2" ng-model="main.userData.password">
+              <!-- <input type="text" class="form-control" placeholder="Password Comfirmation" aria-describedby="basic-addon2"> -->
+            </div>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </form>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+
+    <!-- /.modal -->
+    <!--          MODAL END           -->
+
+
+
+
+    <!--          SIDEBAR START           -->
+    <div id="sidebar-wrapper" >
+      <ul class="sidebar-nav">
+        <li>
+          <a href="#">Profile</a>
+          <ul>
+            <li><a href="#">Back to GitHub</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">GA Members</a>
+        </li>
+        <li>
+          <a href="#">Calendar</a>
+        </li>
+        <li>
+          <li><a href="#">Resources</a></li>
+          <ul>
+            <li><a href="#">Notes</a></li>
+            <li><a href="#">Links</a></li>
+            <li><a href="#">Book List</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Gallery</a>
+        </li>
+        <li class="side-foot">
+          <a href="#">More GA</a>
+        </li>
+      </ul>
+    </div>
+    <!--          SIDEBAR END           -->
+    <!--          CONTENT-WRAPPER START           -->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row" id="row-1">
+          <div class="col-lg-12 splash-div">
+            <img id="splash" src="/img/stairs.jpg" alt="classroom image">
+          </div>
+          <div class="col-lg-12">
+            <h1>GA Hub {{'Angular?'}} </h1>
+            {{UI Router working?}}
+            <p>YayYayYayYayYayYayYayYayYayYayYayYayYayYayYay</p>
+            <!-- {{main.loggedIn}} -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--          CONTENT-WRAPPER END           -->
+  </div>
+  <!--          WRAPPER END           -->
+  <!-- js bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+  });
+  </script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+  (function(b, o, i, l, e, r) {
+    b.GoogleAnalyticsObject = l;
+    b[l] || (b[l] =
+      function() {        (b[l].q = b[l].q || []).push(arguments)
+      });
+    b[l].l = +new Date;
+    e = o.createElement(i);
+    r = o.getElementsByTagName(i)[0];
+    e.src = 'https://www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e, r)
+  }(window, document, 'script', 'ga'));
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', 'pageview');
+  </script>
+</body>
+<!--          BODY END           -->
+
+</html>

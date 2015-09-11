@@ -13,17 +13,9 @@ var resourcesController = require('../controllers/resources');
 
 router.get('/resources', resourcesController.index);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-// router.get('/api', function(req, res, next) {
-//   res.json({message: "You made it to the API"});
-// });
-
 // AUTHENTICATION Routes
 router.post('/api/authenticate', function(req, res){
+  console.log('WERE HERE')
   User.findOne({
     username: req.body.username
   }).select('name username password').exec(function(err, user){
@@ -53,7 +45,7 @@ router.post('/api/authenticate', function(req, res){
 
         res.json({
           success: true,
-          message: 'Enjoy your token, you filthy animal.',
+          message: 'Finally got your token.',
           token: token
         });
       }
