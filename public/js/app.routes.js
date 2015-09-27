@@ -23,6 +23,14 @@ angular.module('gaClasshub')
       templateUrl: 'js/templates/gallery.html',
       controller: 'mainController',
       controllerAs: 'main'
+    })
+
+    // PROFILE STATE
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'js/templates/profile.html',
+      controller: 'mainController',
+      controllerAs: 'main'
     });
 
     $urlRouterProvider.otherwise('/'); //default state
