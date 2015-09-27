@@ -1,5 +1,7 @@
 ##README
 
+##Link to [Trello](https://trello.com/b/QMUw1WJw/ga-blackboard)
+
 ##Class Hub for General Assembly
 This App will be a learning management system for one GA class. It will bring different elements used throughout the course together to make the learning process for a GA student more fluid.
 
