@@ -31,6 +31,14 @@ angular.module('gaClasshub')
       templateUrl: 'js/templates/profile.html',
       controller: 'mainController',
       controllerAs: 'main'
+    })
+
+    // CLASSMATES STATE
+    .state('classmates', {
+      url: '/classmates',
+      templateUrl: 'js/templates/classmates.html',
+      controller: 'mainController',
+      controllerAs: 'main'
     });
 
     $urlRouterProvider.otherwise('/'); //default state

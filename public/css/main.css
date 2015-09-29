@@ -18,6 +18,10 @@ nav.navbar-default {
   border: none;
 }
 
+.logo {
+    font-family: "PFDinTextCompProBold", Impact, Arial;
+}
+
 div#page-content-wrapper {
   margin: 0;
   padding: 0;
@@ -45,6 +49,10 @@ div.splash {
 .welcome {
     position: relative;
     color: white;
+}
+
+.info {
+    position: absolute;
 }
 
 .home {
@@ -123,6 +131,7 @@ div.splash {
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    list-style: none;
 }
 
 .sidebar-nav li a {
@@ -183,4 +192,5 @@ div.splash {
         position: relative;
         margin-right: 0;
     }
-}*/
+}
+*/

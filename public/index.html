@@ -46,14 +46,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <!-- <div class="logo"> -->
+    <div class="logo">
     <a href="#menu-toggle" id="menu-toggle" ng-hide="!main.login.status">
       <img src="/img/GAlogo.png" alt="GA logo" width="5%">GA Class Hub
     </a>
-    <!-- </div> -->
+    </div>
   </div>
 
-  <!-- navbar-header -->
+  <!-- navbar-top -->
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
@@ -83,8 +83,7 @@
   <!-- /.navbar-collapse -->
 </nav>
 <!--          TOP NAV END           -->
-<!--          WRAPPER START              -->
-<div id="wrapper">
+
   <!--          MODAL START           -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -117,12 +116,11 @@
         </div>
         </form>
       </div>
-      <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
   </div>
-  <!-- /.modal -->
   <!--          MODAL END           -->
+
+<div id="wrapper">
   <!--          SIDEBAR START           -->
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
@@ -130,7 +128,7 @@
         <a ui-sref-active="active" ui-sref="profile">Profile</a>
       </li>
       <li>
-        <a href="#">GA Members</a>
+        <a ui-sref-active="active" ui-sref="classmates">Classmates</a>
       </li>
       <li>
         <a href="#">Calendar</a>
