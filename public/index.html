@@ -72,9 +72,6 @@
             </form>
           </li>
           <li>
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Sign Up</button>
-          </li>
-          <li>
             <button class="btn btn-default"><a ng-click="main.doLogout()">Logout</a></button>
           </li>
         </ul>
@@ -115,7 +112,7 @@
           </p>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Sign up</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
         </form>
@@ -164,7 +161,11 @@
   </div>
   <!--          SIDEBAR END           -->
 
-  <div ui-view></div>
+  <div ui-view>
+    <div id="page-content-wrapper">
+
+    </div>
+  </div>
 
   <!--          BODY END           -->
   <!-- js bootstrap -->

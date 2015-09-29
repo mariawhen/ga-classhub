@@ -23,12 +23,7 @@ div#page-content-wrapper {
   padding: 0;
 }
 
-div.jumbotron {
-  background-image: url('/img/stairs.jpg');
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
+div.splash {
   color: white;
 }
 
@@ -36,9 +31,25 @@ div.jumbotron {
     width: 100px;
 }
 
+.img-rounded {
+    height: 200px;
+}
+
 #splash {
   width: 100%;
-  height: 15%;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+}
+
+.welcome {
+    position: relative;
+    color: white;
+}
+
+.home {
+    padding: 0;
+    margin: 0;
 }
 
 .sign-up {
@@ -47,7 +58,7 @@ div.jumbotron {
 }
 
 .dropdown-menu {
-    width: 200px;
+    width: 300px;
 }
 
 /*Side Bar*/
