@@ -23,11 +23,13 @@ div#page-content-wrapper {
   padding: 0;
 }
 
-div.splash-div {
-  background-image: url('/img/school.jpg');
+div.jumbotron {
+  background-image: url('/img/stairs.jpg');
   width: 100%;
+  height: 100%;
   padding: 0;
   margin: 0;
+  color: white;
 }
 
 .img-responsive {

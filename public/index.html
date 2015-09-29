@@ -129,11 +129,8 @@
   <!--          SIDEBAR START           -->
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li>
-        <a href="#">Profile</a>
-        <ul>
-          <li><a href="#">Back to GitHub</a></li>
-        </ul>
+      <li class="li-profile">
+        <a ui-sref-active="active" ui-sref="profile">Profile</a>
       </li>
       <li>
         <a href="#">GA Members</a>
@@ -141,19 +138,27 @@
       <li>
         <a href="#">Calendar</a>
       </li>
+
       <li>
-        <li><a href="#">Resources</a></li>
-        <ul>
+
+      <li ng-mouseover="showResources = ! showResources"><a href="#">Resources</a>
+        </li>
+        <ul ng-show="showResources">
           <li><a href="#">Notes</a></li>
           <li><a href="#">Links</a></li>
           <li><a href="#">Book List</a></li>
         </ul>
+
+      </li>
+
+      <li>
+        <a href="https://github.com/ga-students/WDI_DTLA_4">Back to GitHub</a>
       </li>
       <li>
         <a ui-sref-active="active" ui-sref="gallery">Gallery</a>
       </li>
-      <li class="side-foot">
-        <a href="#">More GA</a>
+      <li>
+        <a href="https://profiles.generalassemb.ly">GA Profiles</a>
       </li>
     </ul>
   </div>
