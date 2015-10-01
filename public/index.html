@@ -36,54 +36,43 @@
 </head>
 <!--          BODY START           -->
 <!--           TOP NAV START           -->
+
 <body ng-controller="mainController as main">
-<nav class="navbar navbar-fixed-top" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <div class="logo">
-    <a href="#menu-toggle" id="menu-toggle" ng-hide="!main.login.status">
-      <img src="/img/GAlogo.png" alt="GA logo" width="5%">GA Class Hub
-    </a>
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="navbar-header">
+      <div id="logo">
+        <a href="#menu-toggle" id="menu-toggle" ng-hide="!main.login.status">
+          <img src="/img/GAlogo.png" alt="GA logo" width="5%">
+        </a>
+        <a ui-sref="home">CLASS HUB</a>
+      </div>
     </div>
-  </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In <b class="caret"></b>&nbsp;&nbsp;</a>
+          <ul class="dropdown-menu">
+            <li>
+              <form class='login' ng-submit="main.doLogin()">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Username" ng-model="main.loginData.username" aria-describedby="sizing-addon3">
+                </div>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Password" ng-model="main.loginData.password" aria-describedby="basic-addon2">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </li>
+            <li>
+              <button class="btn btn-default"><a ng-click="main.doLogout()">Logout</a></button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-  <!-- navbar-top -->
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sign In <b class="caret"></b>&nbsp;&nbsp;</a>
-        <ul class="dropdown-menu">
-          <li>
-            <form class='login' ng-submit="main.doLogin()">
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Username" ng-model="main.loginData.username" aria-describedby="sizing-addon3">
-              </div>
-              <div class="input-group">
-                <input type="text" class="form-control" placeholder="Password" ng-model="main.loginData.password" aria-describedby="basic-addon2">
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-          </li>
-          <li>
-            <button class="btn btn-default"><a ng-click="main.doLogout()">Logout</a></button>
-          </li>
-        </ul>
-      </li>
-      <!--dropdown -->
-    </ul>
-    <!-- .navbar-right -->
-  </div>
-  <!-- /.navbar-collapse -->
-</nav>
-<!--          TOP NAV END           -->
-
+  <!--          TOP NAV END           -->
   <!--          MODAL START           -->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
@@ -119,61 +108,61 @@
     </div>
   </div>
   <!--          MODAL END           -->
-
-<div id="wrapper">
-  <!--          SIDEBAR START           -->
-  <div id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="li-profile">
-        <a ui-sref-active="active" ui-sref="profile">Profile</a>
-      </li>
-      <li>
-        <a ui-sref-active="active" ui-sref="classmates">Classmates</a>
-      </li>
-      <li>
-        <a href="#">Calendar</a>
-      </li>
-
-      <li>
-
-      <li ng-mouseover="showResources = ! showResources"><a href="#">Resources</a>
+  <div id="wrapper">
+    <!--          SIDEBAR START           -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="li-profile">
+          <p></p>
+          <a ui-sref-active="active" ui-sref="profile">Profile Page</a>
+          <p></p>
         </li>
-        <ul ng-show="showResources">
-          <li><a href="#">Notes</a></li>
-          <li><a href="#">Links</a></li>
-          <li><a href="#">Book List</a></li>
-        </ul>
-
-      </li>
-
-      <li>
-        <a href="https://github.com/ga-students/WDI_DTLA_4">Back to GitHub</a>
-      </li>
-      <li>
-        <a ui-sref-active="active" ui-sref="gallery">Gallery</a>
-      </li>
-      <li>
-        <a href="https://profiles.generalassemb.ly">GA Profiles</a>
-      </li>
-    </ul>
-  </div>
-  <!--          SIDEBAR END           -->
-
-  <div ui-view>
-    <div id="page-content-wrapper">
-
+        <li>
+          <a ui-sref-active="active" ui-sref="classmates">Classmates</a>
+        </li>
+        <li>
+          <a href="#">Calendar</a>
+        </li>
+        <li>
+          <li ng-mouseover="showResources = ! showResources"><a href="#">Resources</a>
+          </li>
+          <ul ng-show="showResources">
+            <li><a href="#">Notes</a></li>
+            <li><a href="#">Links</a></li>
+            <li><a href="#">Book List</a></li>
+          </ul>
+        </li>
+        <li>
+          <a ui-sref-active="active" ui-sref="gallery">Gallery</a>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <div class="side-foot">
+          <li>
+            <a href="https://github.com/ga-students/WDI_DTLA_4"><em>Back to Class Repo</em></a>
+          </li>
+          <li>
+            <a href="https://profiles.generalassemb.ly"><em>GA Profiles</em></a>
+          </li>
+        </div>
+      </ul>
     </div>
-  </div>
-
-  <!--          BODY END           -->
-  <!-- js bootstrap -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <!-- Menu Toggle Script -->
-  <script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-  </script>
+    <!--          SIDEBAR END           -->
+    <div ui-view>
+      <div id="page-content-wrapper">
+      </div>
+    </div>
+    <!-- js bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 </body>
+<!--          BODY END           -->
+
 </html>

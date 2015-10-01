@@ -1,34 +1,36 @@
 /*Body*/
 body {
- font-family: Georgia;
  padding: 0;
  margin: 0;
  padding-top: 50px;
+ /*background-image: url(/img/stairs.jpg);*/
 }
 
 h1 {
   text-align: center;
+  font-family: Futura;
 }
+
 /*Top Horizontal Nav*/
 .navbar-collapse {
   background-color: black;
 }
+
 nav.navbar-default {
   margin-bottom: 0px;
   border: none;
 }
 
-.logo {
-    font-family: "PFDinTextCompProBold", Impact, Arial;
+#logo a {
+    font-family: Impact, Arial;
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
 }
 
 div#page-content-wrapper {
   margin: 0;
   padding: 0;
-}
-
-div.splash {
-  color: white;
 }
 
 .img-responsive {
@@ -40,33 +42,30 @@ div.splash {
 }
 
 #splash {
-  width: 100%;
-  position: absolute;
   padding: 0;
   margin: 0;
+  background-image: url(/img/stairs2.jpg) center;
 }
 
-.welcome {
-    position: relative;
-    color: white;
+#info {
+  /*background-color: rgba(255,255,255, 0.3);*/
 }
 
-.info {
-    position: absolute;
-}
-
-.home {
-    padding: 0;
-    margin: 0;
-}
-
-.sign-up {
-  width: 200px;
-  padding-left: 10px;
+.dropdown-toggle {
+  font-family: serif;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: white;
 }
 
 .dropdown-menu {
-    width: 300px;
+  width: 300px;
+}
+
+.btn {
+  box-shadow: 0 3px 0 0 #f5f5f5;
+  font-family: Futura;
+  /*#be0201*/
 }
 
 /*Side Bar*/
@@ -80,7 +79,7 @@ div.splash {
 
 .side-foot {
   font-size: 80%;
-  margin-top: 100%;
+  margin-top: 90%;
 }
 
 #wrapper.toggled {
@@ -132,17 +131,19 @@ div.splash {
     text-indent: 20px;
     line-height: 40px;
     list-style: none;
+    /*padding: 5px;*/
+    /*font-weight: bold;*/
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #fff;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #999999;
     background: rgba(255,255,255,0.2);
 }
 
