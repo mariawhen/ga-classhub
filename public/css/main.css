@@ -69,6 +69,10 @@ div#page-content-wrapper {
   color: white;
 }
 
+a:focus, a:hover {
+  color: #d9534f !important;
+}
+
 .dropdown-menu {
   width: 300px;
 }
