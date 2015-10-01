@@ -17,7 +17,7 @@ var routes = require('./routes/index');
 
 // load mongoose and connect to a database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/ga-classhub');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/ga-classhub');
 
 // start running express, and save the configurations for the express
 // "app" with the variable `app`.
